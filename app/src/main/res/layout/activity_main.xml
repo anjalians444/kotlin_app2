@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".MainActivity"
+    tools:showIn="@layout/activity_main">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/edname"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:hint="Name"
+            android:background="@drawable/edit_bg"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/edmobile"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:inputType="number"
+            android:background="@drawable/edit_bg"
+            android:hint="Phone no." />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button_add_user"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/edit_bg"
+                android:layout_marginHorizontal="5dp"
+                android:onClick="addPerson"
+                android:text="Add"
+                tools:ignore="OnClick" />
+            <!--<Button
+                android:id="@+id/button_update_person"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Update"
+                android:onClick="updatePerson"
+                tools:ignore="OnClick" />-->
+
+<!--            <Button-->
+<!--                android:id="@+id/button_delete_user"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:onClick="deleteUser"-->
+<!--                android:text="Delete"-->
+<!--                tools:ignore="OnClick" />-->
+
+            <Button
+                android:id="@+id/button_show_all"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/edit_bg"
+                android:layout_marginHorizontal="5dp"
+                android:onClick="showAllUsers"
+                android:text="Show All"
+                tools:ignore="OnClick" />
+
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="30dp"
+            android:id="@+id/recycler"/>
+
+</LinearLayout>
+
+
+</RelativeLayout>
