@@ -47,11 +47,19 @@ class MainActivity : AppCompatActivity() {
 
         val  name = edName.text.toString()
         val mobile = edMobile.text.toString()
+    //    var  vailid : String= "^[0-9]$"
+
+      //  String number=entered_number.getText().toString();
+
+//        if(edMobile.getText().toString().length <10 || mobile.length >13 || mobile.matches(vailid)==false  ) {
+//           // Toast.makeText(MyDialog.this,"Please enter "+"\n"+" valid phone number",Toast.LENGTH_SHORT).show();
+//            // am_checked=0;
+//        }
 
         if (name.isEmpty() || name.length < 6 ) {
             edName.setError("please Valid 6 latter Name")
         }
-            else if( mobile.isEmpty() || mobile.length <= 10){
+            else if( mobile.isEmpty() || mobile.length != 10){
                 edMobile.setError("please Valid 10 digits Number" )
 
             Toast.makeText(this,"please enter required feald",Toast.LENGTH_LONG).show()
@@ -83,3 +91,7 @@ class MainActivity : AppCompatActivity() {
         edMobile.requestFocus()
     }
 }
+
+//private fun String.matches(regex: String): Boolean {
+//
+//}

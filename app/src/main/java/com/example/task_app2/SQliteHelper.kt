@@ -44,7 +44,7 @@ class SQliteHelper(context : Context) :
         val db = this.writableDatabase
 
         val cv = ContentValues()
-        cv.put(COLUMN_ID,userModel.id)
+        //cv.put(COLUMN_ID,userModel.id)
         cv.put(COLUMN_NAME,userModel.name)
         cv.put(COLUMN_MOBILENO,userModel.mobile)
          val success = db.insert(TABLE_USERS,null,cv)
