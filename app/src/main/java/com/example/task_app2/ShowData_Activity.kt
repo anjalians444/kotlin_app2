@@ -29,7 +29,9 @@ class ShowData_Activity : AppCompatActivity() {
     }
     private fun getalluser(){
         val userdata = sQliteHelper.getAllusers()
-        Log.e("hiii","${userdata.size}")
+        // Log.e("hiii","${userdata.size}")
+
+        adapter?.additems(userdata)
     }
 
     private fun inti() {

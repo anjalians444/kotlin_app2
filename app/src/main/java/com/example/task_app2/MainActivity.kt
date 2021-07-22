@@ -16,9 +16,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var edMobile : EditText
     private lateinit var btnadd : Button
     private lateinit var btnshow : Button
-    private lateinit var rc: RecyclerView
     //  private lateinit var layoutmanaget:RecyclerView.LayoutManager
-    private var adapter: ShowData_Adapter? = null
+   // private var adapter: ShowData_Adapter? = null
 
     private lateinit var sQliteHelper: SQliteHelper
 
@@ -26,34 +25,35 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         initi()
-        recyclerinti()
+       // recyclerinti()
        // getalluser()
         sQliteHelper = SQliteHelper(this)
     }
-    private fun recyclerinti() {
-        rc.layoutManager = LinearLayoutManager(this)
-        adapter = ShowData_Adapter()
-        rc.adapter = adapter
-    }
+
 
 
     private fun initi() {
         edName = findViewById<EditText>(R.id.edname)
         edMobile = findViewById<EditText>(R.id.edmobile)
-        rc = findViewById<RecyclerView>(R.id.recycler)
+       // rc = findViewById<RecyclerView>(R.id.recycler)
     }
 
     fun showAllUsers(view: View) {
-        getalluser()
-//     val intent = Intent(this,ShowData_Activity::class.java)
-//        startActivity(intent)
+      //  getalluser()
+     val intent = Intent(this,ShowData_Activity::class.java)
+        startActivity(intent)
     }
     fun addPerson(view: View) {
 
         val  name = edName.text.toString()
         val mobile = edMobile.text.toString()
 
-        if (name.isEmpty() || mobile.isEmpty()){
+        if (name.isEmpty() || name.length < 6 ) {
+            edName.setError("please Valid 6 latter Name")
+        }
+            else if( mobile.isEmpty() || mobile.length <= 10){
+                edMobile.setError("please Valid 10 digits Number" )
+
             Toast.makeText(this,"please enter required feald",Toast.LENGTH_LONG).show()
         }else{
             val  user = UserModel(name =name,mobile = mobile)
@@ -71,12 +71,12 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun getalluser(){
-        val userdata = sQliteHelper.getAllusers()
-       // Log.e("hiii","${userdata.size}")
-
-        adapter?.additems(userdata)
-    }
+//    private fun getalluser(){
+//        val userdata = sQliteHelper.getAllusers()
+//       // Log.e("hiii","${userdata.size}")
+//
+//        adapter?.additems(userdata)
+//    }
     private fun clearEditText() {
         edName.setText("")
         edMobile.setText("")

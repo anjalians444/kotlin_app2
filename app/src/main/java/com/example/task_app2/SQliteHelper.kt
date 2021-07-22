@@ -79,7 +79,7 @@ class SQliteHelper(context : Context) :
 
         val user = UserModel(id = id, name = username , mobile = mobileno)
         userlist.add(user)
-    }while (cursor.moveToFirst())
+    }while (cursor.moveToNext())
 }
         return  userlist
     }
